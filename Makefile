@@ -6,7 +6,7 @@
 #    By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/01 16:28:48 by ssawane           #+#    #+#              #
-#    Updated: 2022/08/12 20:53:20 by ssawane          ###   ########.fr        #
+#    Updated: 2022/08/22 14:16:06 by ssawane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,10 @@ CC		=	gcc
 HEADER	=	includes/cub3d.h
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -f
-LIBS	=	-L libft -lft
+LIBS	=	-L libft -lft -L minilibx -lmlx -framework OpenGL -framework AppKit
 MN_DR	=	src/main/
 PRS_DR	=	src/parse/
-MAIN	=	cub3d
+MAIN	=	cub3d start_playing
 PARSE	=	get_next_line parsing line_checks params\
 			color_checks free_funcs map_convert borders_check
 SRCS	=	$(addsuffix .c, $(addprefix $(MN_DR), $(MAIN)))\
@@ -33,8 +33,9 @@ all		:	$(NAME)
 $(NAME)	:	$(OBJ)
 			@echo "\n"
 			@make -C libft
+			@make -C minilibx
 			@echo "\033[0;32mCompiling cub3D..."
-			@$(CC) $(LIBS) $(CFLAGS) $(OBJ) -o $(NAME)
+			@$(CC) $(CFLAGS) $(LIBS) $(OBJ) -o $(NAME)
 			@echo "\n\033[0;32mDone !"
 
 %.o		:	%.c

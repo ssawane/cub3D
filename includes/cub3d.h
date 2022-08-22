@@ -6,14 +6,15 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:38:30 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/22 11:12:30 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/22 14:15:54 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-// # include <mlx.h>
+# include "../minilibx/mlx.h"
+# include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -92,6 +93,8 @@ void	line_mod(t_cub *cub);
 void	map_convert(t_cub *cub, int i);
 void	map_checks(t_cub *cub);
 void	borders_check(char **map, t_cub *cub);
+void	start_playing(t_game *game);
+
 
 // temp
 void	print_params(t_game *game);
