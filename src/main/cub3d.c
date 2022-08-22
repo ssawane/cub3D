@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:30:35 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/13 11:05:06 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/18 18:21:17 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	cub_init(t_cub *cub)
 	cub->game->we = NULL;
 	cub->game->ea = NULL;
 	cub->game->map = NULL;
+	cub->game->dirx = 0;
+	cub->game->diry = 0;
+	cub->game->plx = 0;
+	cub->game->ply = 0;
 }
 
 int	main(int ac, char **av)
@@ -45,6 +49,7 @@ int	main(int ac, char **av)
 		printf("%d cub mapend\n", cub.mapend);
 		printf("%d cub infos\n", cub.infos);
 		print_map(cub.game);
+		start_playing(cub.game);
 	}
 	// while (1);
 	return (0);

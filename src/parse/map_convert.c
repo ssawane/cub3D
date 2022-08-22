@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 22:37:43 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/13 11:58:04 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/18 13:37:55 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ void	map_checks(t_cub *cub)
 	valid_symbs(cub->game->map, cub);
 	borders_check(cub->game->map, cub);
 	corners_check(cub->game->map, cub);
+	cub->game->map_w = cub->len;
+	cub->game->map_h = cub->lines;
 }
 
 void	map_convert(t_cub *cub, int i)
