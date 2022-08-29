@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:30:35 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 13:49:56 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 15:40:15 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ int	main(int ac, char **av)
 	cub_init(&cub);
 	if (!main_parsing(ac, av, &cub))
 	{
-		print_params(cub.game);
-		printf("%d cub lines\n", cub.lines);
-		printf("%d cub len\n", cub.len);
-		printf("%d cub mapstart\n", cub.mapstart);
-		printf("%d cub mapend\n", cub.mapend);
-		printf("%d cub infos\n", cub.infos);
-		print_map(cub.game);
-		// play_it(&cub, cub.game);
+		// print_params(cub.game);
+		// printf("%d cub lines\n", cub.lines);
+		// printf("%d cub len\n", cub.len);
+		// printf("%d cub mapstart\n", cub.mapstart);
+		// printf("%d cub mapend\n", cub.mapend);
+		// printf("%d cub infos\n", cub.infos);
+		// print_map(cub.game);
+		play_it(&cub, cub.game);
 	}
-	// while (1);
+	while (1);
 	return (0);
 }

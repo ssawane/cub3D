@@ -6,11 +6,25 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 14:34:46 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 13:49:52 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 16:03:19 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+
+void	free_buff(t_ray *r)
+{
+	int	i;
+
+	if (r->buffer)
+	{
+		i = -1;
+		while (++i < SCREEN_H)
+			free(r->buffer[i]);
+		free(r->buffer);
+		r->buffer = NULL;
+	}
+}
 
 void	free_mass(char **mass)
 {

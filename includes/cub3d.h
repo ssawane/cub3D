@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:38:30 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 14:03:47 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 15:52:21 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void	line_mod(t_cub *cub);
 void	map_convert(t_cub *cub, int i);
 void	map_checks(t_cub *cub);
 void	borders_check(char **map, t_cub *cub);
-void	start_playing(t_game *game);
+void	play_it(t_cub *cub, t_game *game);
 
 // render
 void	window_draw(t_game *game, t_ray *r);
@@ -147,6 +147,7 @@ void	texture_proc(t_game *game, t_ray *r);
 void	floor_ceiling_draw(t_game *game, t_ray *r);
 void	ray_init(t_ray *r);
 void	escape(int keycode, t_game *game);
+void	free_buff(t_ray *r);
 
 
 

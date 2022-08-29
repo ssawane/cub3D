@@ -1,17 +1,25 @@
-NO textures/sky_1.xpm
-SO textures/sky_2.xpm
-WE textures/sky_3.xpm
-EA textures/sky_4.xpm
+NO textures/mossy.xpm
+SO textures/bluestone.xpm
+WE textures/redbrick.xpm
+EA textures/eagle.xpm
 
 
 
-F 184, 34, 32
+F 139, 69, 19
 
-C 5,191,29
+C 135, 206, 235
 
-111
-1S1
-111
+     1111111111111111
+     1000000001100001
+     1011000001111111
+1111110000N10001
+1011000001110001
+1000000000110001  
+1110111110011111
+111101  1111 101    
+111101111111 101
+111111111111 111  
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:29:59 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 11:09:55 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 16:20:47 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	walls_draw(t_game *game, t_ray *r)
 		}
 		r->y++;
 	}
+	free_buff(r);
+	r->buffer = NULL;
 }
 
 void	floor_ceiling_draw(t_game *game, t_ray *r)
@@ -83,7 +85,7 @@ void	texture_proc(t_game *game, t_ray *r)
 	if (!r->side)
 		r->wall_x = game->py + r->pwdist * r->rdy;
 	else
-		r->wall_x = game->py + r->pwdist * r->rdx;
+		r->wall_x = game->px + r->pwdist * r->rdx;
 	r->wall_x -= floor(r->wall_x);
 	r->tex_x = (int)(r->wall_x * (double)(TEXWIDTH));
 	if (!r->side && r->rdx > 0)

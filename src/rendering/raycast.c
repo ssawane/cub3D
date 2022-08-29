@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:27:16 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 10:40:25 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 15:56:33 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	init_val(t_game *game, t_ray *r)
 	r->rdy = game->diry + game->ply * r->camx;
 	r->mapx = (int)game->px;
 	r->mapy = (int)game->py;
-	if (r->rdx)
-		r->ddistx = fabs(1 / r->rdx);
-	else
+	if (r->rdx == 0)
 		r->ddistx = 1e30;
-	if (r->rdy)
-		r->ddisty = fabs(1 / r->rdy);
 	else
+		r->ddistx = fabs(1 / r->rdx);
+	if (r->rdy == 0)
 		r->ddisty = 1e30;
+	else
+		r->ddisty = fabs(1 / r->rdy);
 }
 
 void	dda_init(t_game *game, t_ray *r)
@@ -55,6 +55,7 @@ void	dda_init(t_game *game, t_ray *r)
 
 void	dda_proc(t_game *game, t_ray *r)
 {
+	r->hit = 0;
 	while (!r->hit)
 	{
 		if (r->sdistx < r->sdisty)
@@ -69,7 +70,7 @@ void	dda_proc(t_game *game, t_ray *r)
 			r->mapy += r->stepy;
 			r->side = 1;
 		}
-		if (game->map[r->mapx][r->mapy] != 0)
+		if (game->map[r->mapx][r->mapy] != '0')
 			r->hit = 1;
 	}
 }
@@ -104,7 +105,7 @@ void	window_draw(t_game *game, t_ray *r)
 		line_end_start(r);
 		texture_proc(game, r);
 		which_wall(game, r);
-		r->x++;
+		r->x += 1;
 	}
 	walls_draw(game, r);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.img, 0, 0);
