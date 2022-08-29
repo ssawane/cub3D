@@ -6,7 +6,7 @@
 #    By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/01 16:28:48 by ssawane           #+#    #+#              #
-#    Updated: 2022/08/22 14:16:06 by ssawane          ###   ########.fr        #
+#    Updated: 2022/08/28 10:32:19 by ssawane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,14 @@ RM		=	rm -f
 LIBS	=	-L libft -lft -L minilibx -lmlx -framework OpenGL -framework AppKit
 MN_DR	=	src/main/
 PRS_DR	=	src/parse/
-MAIN	=	cub3d start_playing
+RND_DR	=	src/rendering/
+MAIN	=	cub3d
+RENDER	=	play_it buttonhooks raycast raycast_texture close_hook
 PARSE	=	get_next_line parsing line_checks params\
 			color_checks free_funcs map_convert borders_check
 SRCS	=	$(addsuffix .c, $(addprefix $(MN_DR), $(MAIN)))\
 			$(addsuffix .c, $(addprefix $(PRS_DR), $(PARSE)))\
+			$(addsuffix .c, $(addprefix $(RND_DR), $(RENDER)))\
 			$(addsuffix .c, temp/temp)	
 OBJ		=	$(SRCS:%.c=%.o)
 

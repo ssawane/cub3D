@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:29:12 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/12 23:52:45 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 10:35:52 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	lines_count(char **av, t_cub *cub)
 		perror("error: cannot open the map");
 		exit(1);
 	}
-	while ((cub->line = get_next_line(cub->fd)))
+	cub->line = get_next_line(cub->fd);
+	while (cub->line)
 	{
 		line_mod(cub);
 		if (!cub->mapstart && ismap(cub->line))
@@ -63,6 +64,7 @@ void	lines_count(char **av, t_cub *cub)
 		if (!cub->mapend && cub->mapstart && isempty(cub->line))
 			cub->mapend = cub->lines;
 		free(cub->line);
+		cub->line = get_next_line(cub->fd);
 		cub->lines++;
 	}
 	if (!cub->mapend && cub->mapstart)

@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 14:35:56 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/12 22:28:52 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 10:38:03 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	isdigs(char *str)
 	i = -1;
 	while (str[++i])
 	{
-		if (str[i] < 48 || str[i] > 57 )
+		if (str[i] < 48 || str[i] > 57)
 			return (0);
 	}
 	return (1);
@@ -61,7 +61,6 @@ void	commas_check(t_cub *cub)
 	}
 	if (k != 2)
 		pars_free(cub, 1);
-	
 }
 
 void	color_next(t_cub *cub, int type, int i)

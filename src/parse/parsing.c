@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 22:29:46 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/13 10:19:16 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 13:47:21 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main_parsing(int ac, char **av, t_cub *cub)
 
 	i = 0;
 	init_checks(ac, av, cub);
-	while (++i < cub->mapstart)
+	while (++i <= cub->mapstart)
 	{
 		cub->line = get_next_line(cub->fd);
 		params(cub);

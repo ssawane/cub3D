@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 22:37:43 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/18 13:37:55 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 13:55:10 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	change_map(t_cub *cub)
 	int		j;
 	char	**tmp;
 
-	i = -1;
-	tmp = malloc(sizeof(char *) * cub->lines + 1);
-	while (cub->game->map[++i])
+	i = 0;
+	tmp = malloc(sizeof(char *) * (cub->lines + 1));
+	while (cub->game->map[i])
 	{
 		if (ft_strlen(cub->game->map[i]) < cub->len)
 		{
 			j = -1;
-			tmp[i] = malloc(sizeof(char) * cub->len);
+			tmp[i] = malloc(sizeof(char) * (cub->len + 1));
 			while (cub->game->map[i][++j])
 				tmp[i][j] = cub->game->map[i][j];
 			while (j < cub->len)
@@ -34,6 +34,7 @@ void	change_map(t_cub *cub)
 		}
 		else
 			tmp[i] = ft_strdup(cub->game->map[i]);
+		i++;
 	}
 	tmp[i] = 0;
 	free_mass(cub->game->map);
@@ -95,6 +96,8 @@ void	valid_symbs(char **map, t_cub *cub)
 
 void	map_checks(t_cub *cub)
 {
+	if (cub->len < 3 || cub->lines < 3)
+		pars_free(cub, 2);
 	if (cub->nosquare)
 		change_map(cub);
 	valid_symbs(cub->game->map, cub);

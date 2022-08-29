@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 17:11:33 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/12 11:08:25 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 13:46:48 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,31 @@ void	print_map(t_game *game)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (game->map)
 	{
-		while (game->map[++i])
+		printf("%s\n", "start map");
+		while (game->map[i])
 		{
 			printf("%s\n", game->map[i]);
+			i++;
+		}
+	}
+}
+
+void	print_char(char **game)
+{
+	int	i;
+
+	i = 0;
+	if (game)
+	{
+		printf("%s\n", "start map");
+		while (game[i])
+		{
+			printf("%d ft_strlen(game[i])\n", ft_strlen(game[i]));
+			printf("%s gam\n", game[i]);
+			i++;
 		}
 	}
 }

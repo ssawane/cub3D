@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 20:50:42 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/13 10:20:05 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 10:34:06 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,25 @@ void	borders_check_next2(t_cub *cub, char **map, int i, int j)
 	{
 		if (!spc_val(map[i][j - 1]) || !spc_val(map[i - 1][j])
 			|| !spc_val(map[i + 1][j]))
-				pars_free(cub, 2);
+			pars_free(cub, 2);
 	}
 	else if (i == 0)
 	{
 		if (!spc_val(map[i][j + 1]) || !spc_val(map[i][j - 1])
 			|| !spc_val(map[i + 1][j]))
-				pars_free(cub, 2);
+			pars_free(cub, 2);
 	}
 	else if (i == cub->lines - 1)
 	{
 		if (!spc_val(map[i][j + 1]) || !spc_val(map[i][j - 1])
 			|| !spc_val(map[i - 1][j]))
-				pars_free(cub, 2);
+			pars_free(cub, 2);
 	}
 	else
 	{
 		if (!spc_val(map[i][j + 1]) || !spc_val(map[i][j - 1])
 			|| !spc_val(map[i + 1][j]) || !spc_val(map[i - 1][j]))
-				pars_free(cub, 2);
+			pars_free(cub, 2);
 	}
 }
 
@@ -68,7 +68,7 @@ void	borders_check_next(t_cub *cub, char **map, int i, int j)
 	{
 		if (!spc_val(map[i][j + 1]) || !spc_val(map[i - 1][j])
 			|| !spc_val(map[i + 1][j]))
-				pars_free(cub, 2);
+			pars_free(cub, 2);
 	}
 	else
 		borders_check_next2(cub, map, i, j);

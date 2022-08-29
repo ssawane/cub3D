@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:24:08 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/12 23:13:55 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/28 10:38:18 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,9 @@ void	params(t_cub *cub)
 	if (!isempty(cub->line) && !ismap(cub->line))
 	{
 		if (!ft_strncmp(cub->line, "NO ", 3)
-				|| !ft_strncmp(cub->line, "SO ", 3)
-				|| !ft_strncmp(cub->line, "WE ", 3)
-				|| !ft_strncmp(cub->line, "EA ", 3))
+			|| !ft_strncmp(cub->line, "SO ", 3)
+			|| !ft_strncmp(cub->line, "WE ", 3)
+			|| !ft_strncmp(cub->line, "EA ", 3))
 			param_add(cub, 1);
 		else if (!ft_strncmp(cub->line, "F ", 2))
 			param_add(cub, 2);
