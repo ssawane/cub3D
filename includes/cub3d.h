@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:38:30 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/29 15:52:21 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:11:57 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,6 @@ void	texture_proc(t_game *game, t_ray *r);
 void	floor_ceiling_draw(t_game *game, t_ray *r);
 void	ray_init(t_ray *r);
 void	escape(int keycode, t_game *game);
-void	free_buff(t_ray *r);
 
 
 

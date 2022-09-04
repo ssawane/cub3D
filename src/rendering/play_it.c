@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 13:09:47 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/29 16:10:53 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:02:26 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	init_map(t_game *game)
 
 	game->mlx = mlx_init();
 	game->mlx_win = mlx_new_window(game->mlx, SCREEN_W, SCREEN_H, "cub3D");
-	// game->r.buffer = NULL;
 	i = -1;
 	while (game->map[++i])
 	{

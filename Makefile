@@ -6,7 +6,7 @@
 #    By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/01 16:28:48 by ssawane           #+#    #+#              #
-#    Updated: 2022/08/28 10:32:19 by ssawane          ###   ########.fr        #
+#    Updated: 2022/09/04 14:33:22 by ssawane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS	=	$(addsuffix .c, $(addprefix $(MN_DR), $(MAIN)))\
 			$(addsuffix .c, temp/temp)	
 OBJ		=	$(SRCS:%.c=%.o)
 
-.PHONY	:	all clean fclean re
+.PHONY	:	all clean fclean re bonus
 
 all		:	$(NAME)
 
@@ -48,6 +48,7 @@ $(NAME)	:	$(OBJ)
 clean	:	
 			@echo "\n\033[0;31mCleaning libft..."
 			@make -C libft clean
+			@make -C bonus clean
 			@echo "\nRemoving binaries..."
 			@$(RM) $(OBJ)
 			@echo "\033[0m"
@@ -55,8 +56,12 @@ clean	:
 fclean	:	clean
 			@echo "\033[0;31mDeleting executable..."
 			@make -C libft fclean
+			@make -C bonus fclean
 			@$(RM) $(NAME)
 			@echo "\033[0m"
 			
 re		:	fclean all
+
+bonus	:	
+			@make -C bonus
 

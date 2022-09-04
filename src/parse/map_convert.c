@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 22:37:43 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 13:55:10 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:17:03 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,5 @@ void	map_convert(t_cub *cub, int i)
 		i++;
 	}
 	cub->game->map[k] = 0;
+	close(cub->fd);
 }

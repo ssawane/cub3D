@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:29:59 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/29 16:20:47 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:12:43 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 void	walls_draw(t_game *game, t_ray *r)
 {
+	int	i;
+
 	r->y = 0;
 	while (r->y < SCREEN_H)
 	{
@@ -33,7 +35,10 @@ void	walls_draw(t_game *game, t_ray *r)
 		}
 		r->y++;
 	}
-	free_buff(r);
+	i = -1;
+	while (++i < SCREEN_H)
+		free(r->buffer[i]);
+	free(r->buffer);
 	r->buffer = NULL;
 }
 

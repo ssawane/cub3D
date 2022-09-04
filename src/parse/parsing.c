@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 22:29:46 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/28 13:47:21 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:18:59 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_checks(int ac, char **av, t_cub *cub)
 		|| av[1][i - 2] != 'c' || av[1][i - 3] != '.')
 	{
 		printf("%s\n", "error: format");
-		exit (1);
+		exit(1);
 	}
 	lines_count(av, cub);
 	cub->fd = open(av[1], O_RDONLY);
@@ -53,6 +53,5 @@ int	main_parsing(int ac, char **av, t_cub *cub)
 		pars_free(cub, 1);
 	map_convert(cub, i);
 	map_checks(cub);
-	close(cub->fd);
 	return (0);
 }
