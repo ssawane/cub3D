@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 14:34:46 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/29 19:12:04 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:37:48 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	free_mass(char **mass)
 
 void	pars_free(t_cub *cub, int flag)
 {
-	printf("bad line: %s\n", cub->line); // delete
 	if (cub->game->no)
 		free(cub->game->no);
 	if (cub->game->so)
@@ -46,6 +45,5 @@ void	pars_free(t_cub *cub, int flag)
 		printf("%s\n", "error: bad params");
 	if (flag == 2)
 		printf("%s\n", "error: bad map");
-	// while (1);
 	exit(1);
 }

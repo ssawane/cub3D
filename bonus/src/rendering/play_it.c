@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 13:09:47 by ssawane           #+#    #+#             */
-/*   Updated: 2022/09/04 14:46:00 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 14:27:00 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,9 @@ void	play_it(t_cub *cub, t_game *game)
 {
 	init_map(game);
 	data_load(cub, game, &game->img);
-	window_draw(game, &game->r);
 	game->img.gun = mlx_xpm_file_to_image(game->mlx,
 			game->gn, &game->w, &game->h);
+	window_draw(game, &game->r);
 	if (!game->img.gun)
 		pars_free(cub, 2);
 	mlx_hook(game->mlx_win, 6, 1L << 6, mousehook, game);

@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 13:09:47 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/29 19:02:26 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:27:20 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	init_map(t_game *game)
 				|| game->map[i][j] == 'E')
 			{
 				init_direction(game, game->map[i][j]);
-				game->px = (double)i;
-				game->py = (double)j;
+				game->px = (double)i + 0.5;
+				game->py = (double)j + 0.5;
 				game->map[i][j] = '0';
 				break ;
 			}

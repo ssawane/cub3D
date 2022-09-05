@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:38:30 by ssawane           #+#    #+#             */
-/*   Updated: 2022/08/29 19:11:57 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 16:27:59 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_data
 	int		ceiling_data;
 }	t_data;
 
-typedef struct	s_ray {
+typedef struct s_ray {
 	int		x;
 	int		y;
 	int		mapx;
@@ -82,7 +82,7 @@ typedef struct	s_ray {
 	int		**buffer;
 }	t_ray;
 
-typedef struct	s_game {
+typedef struct s_game {
 	t_ray	r;
 	t_data	img;
 	int		map_w;
@@ -106,7 +106,7 @@ typedef struct	s_game {
 	void	*mlx_win;
 }	t_game;
 
-typedef struct	s_cub {
+typedef struct s_cub {
 	t_game	*game;
 	int		fd;
 	int		clr;
@@ -121,7 +121,6 @@ typedef struct	s_cub {
 	char	**clrs;
 }	t_cub;
 
-// parse
 char	*get_next_line(int fd);
 int		main_parsing(int ac, char **av, t_cub *cub);
 void	lines_count(char **av, t_cub *cub);
@@ -136,8 +135,6 @@ void	map_convert(t_cub *cub, int i);
 void	map_checks(t_cub *cub);
 void	borders_check(char **map, t_cub *cub);
 void	play_it(t_cub *cub, t_game *game);
-
-// render
 void	window_draw(t_game *game, t_ray *r);
 int		close_win(void);
 int		buttonhooks(int keycode, t_game *game);
@@ -147,12 +144,5 @@ void	texture_proc(t_game *game, t_ray *r);
 void	floor_ceiling_draw(t_game *game, t_ray *r);
 void	ray_init(t_ray *r);
 void	escape(int keycode, t_game *game);
-
-
-
-// temp
-void	print_params(t_game *game);
-void	print_map(t_game *game);
-void	print_char(char **game);
 
 #endif

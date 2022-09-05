@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 12:08:42 by ssawane           #+#    #+#             */
-/*   Updated: 2022/09/04 14:46:15 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:40:23 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,14 @@ void	doors_open(t_game *game)
 
 void	gun_draw(t_game *game)
 {
-	if (game->add == 1)
-		mlx_put_image_to_window(game->mlx,
-			game->mlx_win, game->img.gun, 250, 110);
-	if (game->add == 2)
-		mlx_put_image_to_window(game->mlx,
-			game->mlx_win, game->img.gun, 350, 110);
-	if (game->add == 3)
-	{
-		mlx_put_image_to_window(game->mlx,
-			game->mlx_win, game->img.gun, 450, 110);
-		game->add = 0;
-	}
+	int	delta;
+
+	if (game->add == 14)
+		game->add = -7;
+	if (game->add >= -7 && game->add < 7)
+		delta = game->add;
+	else if (game->add >= 7 && game->add < 14)
+		delta = (game->add - 10) * -2;
+	mlx_put_image_to_window(game->mlx,
+		game->mlx_win, game->img.gun, -50, 230 + delta);
 }

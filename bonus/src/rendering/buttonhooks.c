@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 18:49:25 by ssawane           #+#    #+#             */
-/*   Updated: 2022/09/04 14:18:56 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:55:34 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int	isstepable(t_game *game, double x, double y)
 	double	rad_y;
 	double	rad;
 
-	rad = 0.5;
+	rad = 0.2;
 	rad_x = -rad;
-	while (rad_x <= 0.5)
+	while (rad_x <= 0.2)
 	{
 		rad_y = -rad;
-		while (rad_y <= 0.5)
+		while (rad_y <= 0.2)
 		{
-			if (game->dmap[(int)(x + rad_x)][(int)(y + rad_y)] == 'D')
+			if (game->map[(int)(x + rad_x)][(int)(y + rad_y)] != '0')
 				return (1);
 			rad_y += rad;
 		}

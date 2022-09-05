@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:27:16 by ssawane           #+#    #+#             */
-/*   Updated: 2022/09/04 14:29:57 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 14:20:17 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,9 @@ void	window_draw(t_game *game, t_ray *r)
 		which_wall(game, r);
 		r->x += 1;
 	}
-	minimap(game);
 	walls_draw(game, r);
+	minimap(game);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.img, 0, 0);
-	gun_draw(game);
 	mlx_destroy_image(game->mlx, game->img.img);
+	gun_draw(game);
 }

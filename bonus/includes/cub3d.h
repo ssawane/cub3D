@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:38:30 by ssawane           #+#    #+#             */
-/*   Updated: 2022/09/04 14:44:05 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 16:26:41 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@
 # define TEX_W 64
 # define TEX_H 64
 
-
 typedef struct s_data
 {
 	void	*img;
@@ -57,7 +56,7 @@ typedef struct s_data
 	int		ceiling_data;
 }	t_data;
 
-typedef struct	s_ray {
+typedef struct s_ray {
 	int		x;
 	int		y;
 	int		mapx;
@@ -86,7 +85,7 @@ typedef struct	s_ray {
 	int		**buffer;
 }	t_ray;
 
-typedef struct	s_game {
+typedef struct s_game {
 	t_ray	r;
 	t_data	img;
 	int		w;
@@ -125,7 +124,7 @@ typedef struct	s_game {
 	void	*mlx_win;
 }	t_game;
 
-typedef struct	s_cub {
+typedef struct s_cub {
 	t_game	*game;
 	int		fd;
 	int		clr;
@@ -140,7 +139,6 @@ typedef struct	s_cub {
 	char	**clrs;
 }	t_cub;
 
-// parse
 char	*get_next_line(int fd);
 int		main_parsing(int ac, char **av, t_cub *cub);
 void	lines_count(char **av, t_cub *cub);
@@ -155,8 +153,6 @@ void	map_convert(t_cub *cub, int i);
 void	map_checks(t_cub *cub);
 void	borders_check(char **map, t_cub *cub);
 void	play_it(t_cub *cub, t_game *game);
-
-// render
 void	window_draw(t_game *game, t_ray *r);
 int		close_win(void);
 int		buttonhooks(int keycode, t_game *game);
@@ -174,11 +170,5 @@ int		mousehook(int x, int y, t_game *game);
 void	gun_draw(t_game *game);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 char	*tabs_change(t_cub *cub, int k, int i);
-
-
-// temp
-void	print_params(t_game *game);
-void	print_map(t_game *game);
-void	print_char(char **game);
 
 #endif

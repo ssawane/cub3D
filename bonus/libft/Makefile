@@ -27,12 +27,9 @@ OBJ		=	$(patsubst %.c, %.o, $(SRCS))
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJ) $(HEADER)
-			@echo "\n\n\033[0;32mCompiling libft..."
 			@ar rcs $(NAME) $?
-			@echo "\033[0m"
 
 %.o		:	%.c $(HEADER)
-			@printf "\033[0;33mGenerating libft objects... %-33.33s\r" $@
 			@$(CC) $(CFLAGS) -c $< -o $@
 			
 

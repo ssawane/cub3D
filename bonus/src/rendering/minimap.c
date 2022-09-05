@@ -6,7 +6,7 @@
 /*   By: ssawane <ssawane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 21:40:39 by ssawane           #+#    #+#             */
-/*   Updated: 2022/09/04 14:29:22 by ssawane          ###   ########.fr       */
+/*   Updated: 2022/09/05 13:12:51 by ssawane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	draw_square(t_game *game)
 		{
 			if (game->map[game->mi][game->mj] == '1')
 				my_mlx_pixel_put(&game->img, game->mj + game->mx,
-					game->mi + game->my, 0xC0D34141);
+					game->mi + game->my, 0x00000000);
 			else
 				my_mlx_pixel_put(&game->img, game->mj + game->mx,
-					game->mi + game->my, 0xA07BADCD);
+					game->mi + game->my, 16711680);
 			game->mx++;
 		}
 		game->mx -= game->sf;
@@ -36,11 +36,11 @@ void	draw_square(t_game *game)
 
 void	miniborders_init(t_game *game, int *mj, int *mx)
 {
-	game->sf = 5;
-	game->mi = (int)game->py - 5;
-	game->mj = (int)game->px - 5;
-	game->miend = (int)game->py + 5;
-	game->mjend = (int)game->px + 5;
+	game->sf = 7;
+	game->mi = (int)game->px - 5;
+	game->mj = (int)game->py - 5;
+	game->miend = (int)game->px + 5;
+	game->mjend = (int)game->py + 5;
 	game->mx = SCREEN_W / 16;
 	game->my = SCREEN_H / 16;
 	while (game->mi < 0)
